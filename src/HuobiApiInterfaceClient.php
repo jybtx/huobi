@@ -529,7 +529,7 @@ class HuobiApiInterfaceClient
      * @param  array      $append_param [description]
      * @return [type]                   [description]
      */
-    public function createSignUrl($append_param = []) {
+    protected function createSignUrl($append_param = []) {
         // 验签参数
         $param = [
 			'AccessKeyId'      => $this->access_key,
@@ -551,7 +551,7 @@ class HuobiApiInterfaceClient
      * @param  [type]     $param [description]
      * @return [type]            [description]
      */
-    public function bindParam($param) {
+    protected function bindParam($param) {
         $u = [];
         $sort_rank = [];
         foreach($param as $k=>$v) {
@@ -569,7 +569,7 @@ class HuobiApiInterfaceClient
      * @param  [type]     $param [description]
      * @return [type]            [description]
      */
-    public function createSig($param) {
+    protected function createSig($param) {
         $sign_param_1 = $this->req_method."\n".$this->api."\n".$this->api_method."\n".implode('&', $param);
         $signature = hash_hmac('sha256', $sign_param_1, $this->secret_key, true);
         return base64_encode($signature);
@@ -582,7 +582,7 @@ class HuobiApiInterfaceClient
      * @param  array      $postdata [description]
      * @return [type]               [description]
      */
-    public function curl($url,$postdata=[]) {
+    protected function curl($url,$postdata=[]) {
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_URL, $url);
         if ($this->req_method == 'POST') {

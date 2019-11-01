@@ -1,4 +1,5 @@
-# laravel 火币 API请求库
+# huobi 
+laravel 火币 API请求库
 
 ```terminal
 composer require jybtx/huobi

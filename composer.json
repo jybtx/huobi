@@ -1,0 +1,31 @@
+{
+    "name": "jybtx/huobi",
+    "description": "huobi api interface",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jybtx",
+            "email": "2574034626@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jybtx\\HuobiApi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jybtx\\HuobiApi\\Providers\\HuobiServiceProvider"
+            ],
+            "aliases": {
+                "HuobiApi": "Jybtx\\HuobiApi\\Faceds\\HuobiApiFacade"
+            }
+        }
+    }
+}

@@ -7,6 +7,15 @@ use Jybtx\HuobiApi\HuobiApiInterfaceClient;
 
 class HuobiServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->mergeConfig();
+    }
 	/**
      * Merge configuration.
      * @author jybtx
@@ -15,9 +24,9 @@ class HuobiServiceProvider extends ServiceProvider
      */
     private function mergeConfig()
     {
-    	$this->mergeConfigFrom([
-            __DIR__."/../config/huobi-config.php" => config_path('huobi-config.php'),
-        ]);
+    	$this->mergeConfigFrom(
+            __DIR__."/../../config/huobi-config.php", 'huobi-config'
+        );
     }
     /**
      * Configure package paths.
@@ -25,7 +34,7 @@ class HuobiServiceProvider extends ServiceProvider
     private function configurePaths()
     {
         $this->publishes([
-            __DIR__."/../config/huobi-config.php" => config_path('huobi-config.php'),
+            __DIR__."/../../config/huobi-config.php" => config_path('huobi-config.php'),
         ],'huobi-config');
     }
     /**
@@ -53,16 +62,5 @@ class HuobiServiceProvider extends ServiceProvider
     {
         $this->configurePaths();
         $this->getRegisterSingleton();
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->mergeConfig();
-    }
-    
+    }    
 }

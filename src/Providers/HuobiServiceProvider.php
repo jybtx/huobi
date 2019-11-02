@@ -16,7 +16,7 @@ class HuobiServiceProvider extends ServiceProvider
     private function mergeConfig()
     {
     	$this->mergeConfigFrom([
-            __DIR__."/../../config/huobi-config.php" => config_path('huobi-config.php'),
+            __DIR__."/../config/huobi-config.php" => config_path('huobi-config.php'),
         ]);
     }
     /**
@@ -25,7 +25,7 @@ class HuobiServiceProvider extends ServiceProvider
     private function configurePaths()
     {
         $this->publishes([
-            __DIR__."/../../config/huobi-config.php" => config_path('huobi-config.php'),
+            __DIR__."/../config/huobi-config.php" => config_path('huobi-config.php'),
         ],'huobi-config');
     }
     /**

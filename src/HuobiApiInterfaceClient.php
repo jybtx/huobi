@@ -41,8 +41,7 @@ class HuobiApiInterfaceClient
         ];
         if ($size) $param['size'] = $size;
         $url = $this->createSignUrl($param);
-        $return = $this->curl($url);
-        return $return;
+        return $this->curl($url);
     }
     /**
      * 获取聚合行情(Ticker)

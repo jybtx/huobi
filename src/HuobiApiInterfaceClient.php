@@ -152,7 +152,7 @@ class HuobiApiInterfaceClient
     public function getCommonAllCurrencys() {
         $this->api_method = "/v1/common/currencys";
         $this->req_method = 'GET';
-        $url = $this->create_sign_url([]);
+        $url = $this->createSignUrl([]);
         return $this->curl($url);
     }
     /**

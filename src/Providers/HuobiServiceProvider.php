@@ -37,7 +37,7 @@ class HuobiServiceProvider extends ServiceProvider
     private function getRegisterSingleton()
     {
     	$this->app->singleton('HuobiApi', function ($app) {
-            $config = $app['config']['services']['huobi-config']??null;
+            $config = isset($app['config']['services']['huobi-config'])?$app['config']['services']['huobi-config']:null;
             if ( is_null( $config ) ) {
                 $config = $app['config']['huobi-config'] ?: $app['config']['huobi-config::config'];
             }

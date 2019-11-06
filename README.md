@@ -34,11 +34,11 @@ php artisan vendor:publish --provider "JJybtx\HuoBiApi\Providers\HuobiServicePro
 
 > 行情类API   
 
-- getHistoryKline($symbol = '', $period='',$size=0)   /// 获取K线数据
-- getDetailMerged($symbol = '') // 获取聚合行情(Ticker)
-- getMarketDepth($symbol = '', $type = '') // 获取 Market Depth 数据
-- getMarketTrade($symbol = '')  // 获取 Trade Detail 数据
-- getHistoryTrade($symbol = '', $size = '')  // 批量获取最近的交易记录
+- getHistoryKline($symbol = '', $period='',$size=0)   // 获取K线数据
+- getDetailMerged($symbol = '')   // 获取聚合行情(Ticker)
+- getMarketDepth($symbol = '', $type = '')   // 获取 Market Depth 数据
+- getMarketTrade($symbol = '')     // 获取 Trade Detail 数据
+- getHistoryTrade($symbol = '', $size = '')    // 批量获取最近的交易记录
 - getMarketDetail($symbol = '')  // 获取 Market Detail 24小时成交量数据
 > 公共类API
 - getCommonSymbols() // 查询系统支持的所有交易对及精度
@@ -56,12 +56,12 @@ php artisan vendor:publish --provider "JJybtx\HuoBiApi\Providers\HuobiServicePro
 - getCurrentAndHistoryOrdersMatchresults($symbol = '', $types = '',$start_date = '',$end_date = '',$from = '',$direct='',$size = '') // 查询当前成交、历史成交
 - getAccountIdBalance() //获取账户余额
 > 借贷类API
-- loanAccountTransferIn($symbol = '',$currency='',$amount='')
-- loanAccountTransferOut($symbol = '',$currency='',$amount='')
-- marginOrders($symbol = '',$currency='',$amount='')
-- repayMarginOrders($order_id='',$amount='')
-- getLoanOrders($symbol='',$currency='',$states,$start_date,$end_date,$from,$direct,$size)
-- marginBalance($symbol='')
+- loanAccountTransferIn($symbol = '',$currency='',$amount='')    // 现货账户划入至借贷账户
+- loanAccountTransferOut($symbol = '',$currency='',$amount='')      // 借贷账户划出至现货账户
+- marginOrders($symbol = '',$currency='',$amount='')     // 申请借贷
+- repayMarginOrders($order_id='',$amount='')   // 归还借贷
+- getLoanOrders($symbol='',$currency='',$states,$start_date,$end_date,$from,$direct,$size) // 借贷订单
+- marginBalance($symbol='') // 借贷账户详情
 > 虚拟币提现API
-- withdrawVirtualCurrencyCreate($address='',$amount='',$currency='',$fee='',$addr_tag='')
-- cancelWithdrawalOfVirtualCurrency($withdraw_id='')
+- withdrawVirtualCurrencyCreate($address='',$amount='',$currency='',$fee='',$addr_tag='') // 申请提现虚拟币
+- cancelWithdrawalOfVirtualCurrency($withdraw_id='')     // 申请取消提现虚拟币

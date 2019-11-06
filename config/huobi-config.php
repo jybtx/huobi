@@ -1,9 +1,7 @@
 <?php
 
-return [
 
-
-	
+return [	
 	/*
 	 |
 	 |--------------------------------------------
@@ -27,7 +25,4 @@ return [
 	 * 火币地址
 	 */
 	'huobi_api_url'    => 'https://api.huobi.pro'
-
-
-
 ];

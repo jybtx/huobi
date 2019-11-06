@@ -1,13 +1,13 @@
 <?php
 
-namespace Jybtx\HuobiApi\Providers;
+namespace Jybtx\HuoBiApi\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Jybtx\HuobiApi\HuobiApiInterfaceClient;
+use Jybtx\HuoBiApi\HuobiApiInterfaceClient;
 
 class HuobiServiceProvider extends ServiceProvider
 {
-    /**
+	/**
      * Bootstrap any application services.
      *
      * @return void
@@ -62,5 +62,5 @@ class HuobiServiceProvider extends ServiceProvider
     {
         $this->configurePaths();
         $this->getRegisterSingleton();
-    }    
+    }
 }

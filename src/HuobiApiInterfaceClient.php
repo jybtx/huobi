@@ -1,6 +1,6 @@
 <?php
 
-namespace Jybtx\HuobiApi;
+namespace Jybtx\HuoBiApi;
 
 class HuobiApiInterfaceClient
 {
@@ -469,13 +469,12 @@ class HuobiApiInterfaceClient
      */
     public function marginBalance($symbol='') {
         $this->api_method = "/v1/margin/accounts/balance";
-        $this->req_method = 'POST';
+        $this->req_method = 'GET';
         $postdata = [];
         if ($symbol) $postdata['symbol'] = $symbol;
         $url = $this->createSignUrl($postdata);
         return $this->curl($url);
     }
-
     /**
      * 虚拟币提现API
      */
@@ -516,11 +515,9 @@ class HuobiApiInterfaceClient
         $url = $this->createSignUrl();
         return $this->curl($url);
     }
-
     /**
      * 类库方法
      */
-
     /**
      * 生成验签URL
      * @author jybtx

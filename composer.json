@@ -1,6 +1,6 @@
 {
     "name": "jybtx/huobi",
-    "description": "huobi api interface",
+    "description": "fire money api interface",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,23 +9,23 @@
             "email": "2574034626@qq.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0.0"
+    	"php": ">=7.0.0"
     },
-    "autoload": {
+     "autoload": {
         "psr-4": {
-            "Jybtx\\HuobiApi\\": "src/"
+            "Jybtx\\HuoBiApi\\": "src/"
         }
     },
     "extra": {
-        "laravel": {
+    	"laravel": {
             "providers": [
-                "Jybtx\\HuobiApi\\Providers\\HuobiServiceProvider"
+                "Jybtx\\HuoBiApi\\Providers\\HuobiServiceProvider"
             ],
             "aliases": {
-                "HuobiApi": "Jybtx\\HuobiApi\\Faceds\\HuobiApiFacade"
+                "HuobiApi": "Jybtx\\HuoBiApi\\Faceds\\HuobiFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

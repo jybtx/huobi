@@ -1,6 +1,6 @@
 {
     "name": "jybtx/huobi",
-    "description": "fire money api interface",
+    "description": "huobi api interface",
     "type": "library",
     "license": "MIT",
     "authors": [

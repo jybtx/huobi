@@ -30,3 +30,38 @@ Publish Configuration
 ```shell
 php artisan vendor:publish --provider "JJybtx\HuoBiApi\Providers\HuobiServiceProvider"
 ```
+## Methods
+
+> 行情类API   
+
+- getHistoryKline($symbol = '', $period='',$size=0)   /// 获取K线数据
+- getDetailMerged($symbol = '') // 获取聚合行情(Ticker)
+- getMarketDepth($symbol = '', $type = '') // 获取 Market Depth 数据
+- getMarketTrade($symbol = '')  // 获取 Trade Detail 数据
+- getHistoryTrade($symbol = '', $size = '')  // 批量获取最近的交易记录
+- getMarketDetail($symbol = '')  // 获取 Market Detail 24小时成交量数据
+> 公共类API
+- getCommonSymbols() // 查询系统支持的所有交易对及精度
+- getCommonAllCurrencys() // 查询系统支持的所有币种
+- getCommonTimestamp() // 查询系统当前时间
+- getAccountAccounts() // 查询当前用户的所有账户(即account-id)
+- getAccountBalance() // 查询指定账户的余额
+> 交易类API
+- placeOrder($amount=0,$price=0,$symbol='',$type='') // 交易下单
+- cancelOrderRequest($order_id) // 申请撤销一个订单请求
+- bulkOrderCancellation( $order_ids = array() ) // 批量撤销订单
+- getOrderDetails($order_id) // 查询某个订单详情
+- getOrderDetailsMatchresults($order_id = 0) // 查询某个订单的成交明细
+- getCurrentAndHistoricalOrders($symbol = '',$states = '',$types = '',$start_date = '',$end_date = '',$from = '',$direct='',$size = '') // 查询当前委托、历史委托
+- getCurrentAndHistoryOrdersMatchresults($symbol = '', $types = '',$start_date = '',$end_date = '',$from = '',$direct='',$size = '') // 查询当前成交、历史成交
+- getAccountIdBalance() //获取账户余额
+> 借贷类API
+- loanAccountTransferIn($symbol = '',$currency='',$amount='')
+- loanAccountTransferOut($symbol = '',$currency='',$amount='')
+- marginOrders($symbol = '',$currency='',$amount='')
+- repayMarginOrders($order_id='',$amount='')
+- getLoanOrders($symbol='',$currency='',$states,$start_date,$end_date,$from,$direct,$size)
+- marginBalance($symbol='')
+> 虚拟币提现API
+- withdrawVirtualCurrencyCreate($address='',$amount='',$currency='',$fee='',$addr_tag='')
+- cancelWithdrawalOfVirtualCurrency($withdraw_id='')

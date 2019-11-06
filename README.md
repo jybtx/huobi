@@ -30,6 +30,11 @@ Publish Configuration
 ```shell
 php artisan vendor:publish --provider "JJybtx\HuoBiApi\Providers\HuobiServiceProvider"
 ```
+## Usage
+```php
+use HuobiApi;
+HuobiApi::getAccountAccounts();
+```
 ## Methods
 
 > 行情类API   

@@ -28,7 +28,11 @@ In your `config/app.php` add `Jybtx\HuoBiApi\Providers\HuobiServiceProvider::cla
 Publish Configuration
 
 ```shell
-php artisan vendor:publish --provider "JJybtx\HuoBiApi\Providers\HuobiServiceProvider"
+php artisan vendor:publish --provider "Jybtx\HuoBiApi\Providers\HuobiServiceProvider"
+```
+OR
+```shell
+php artisan vendor:publish --tag=huobi-config
 ```
 ## Usage
 ```php

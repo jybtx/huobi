@@ -70,3 +70,6 @@ HuobiApi::getAccountAccounts();
 > 虚拟币提现API
 - withdrawVirtualCurrencyCreate($address='',$amount='',$currency='',$fee='',$addr_tag='') // 申请提现虚拟币
 - cancelWithdrawalOfVirtualCurrency($withdraw_id='')     // 申请取消提现虚拟币
+
+# License
+MIT

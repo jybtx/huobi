@@ -22,7 +22,7 @@ In your `config/app.php` add `Jybtx\HuoBiApi\Providers\HuobiServiceProvider::cla
 ],
 'aliases'  => [
     ...
-    "HuobiApi": Jybtx\HuoBiApi\Faceds\HuobiFacade::class,
+    "HuobiApi" => Jybtx\HuoBiApi\Faceds\HuobiFacade::class,
 ]
 ```
 Publish Configuration
